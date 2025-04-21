@@ -18,5 +18,11 @@ class LoginActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        val btnclickLogin: Button = findViewById(R.id.btn_login)
+
+        btnclickLogin.setOnClickListener{
+            val bukaDashboard = Intent(this, MainActivity::class.java)
+            startActivity(bukaDashboard)
+        }
     }
 }
