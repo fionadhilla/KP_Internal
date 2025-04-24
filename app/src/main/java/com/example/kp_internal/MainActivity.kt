@@ -2,11 +2,14 @@ package com.example.kp_internal
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.bottomnavigation.BottomNavigationView
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,5 +28,25 @@ class MainActivity : AppCompatActivity() {
             val bukaLogin = Intent(this, LoginActivity::class.java)
             startActivity(bukaLogin)
         }
+
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.NavBar)
+
+        bottomNavigationView.setOnItemSelectedListener { item: MenuItem ->
+            when (item.itemId) {
+                R.id.Home ->
+                    return@setOnItemSelectedListener true
+
+                R.id.Scan -> {
+                    val intent = Intent(this, CameraActivity::class.java)
+                    startActivity(intent)
+                    return@setOnItemSelectedListener true
+                }
+
+                R.id.Settings ->
+                    return@setOnItemSelectedListener true
+            }
+            false
+        }
+
     }
 }
