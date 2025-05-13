@@ -31,6 +31,7 @@ class FaceDetectorHelper(
         detector = FaceDetector.createFromOptions(context, options)
     }
 
+
     fun detect(bitmap: Bitmap) {
         val mpImage = BitmapImageBuilder(bitmap).build()
         detector.detectAsync(mpImage, System.currentTimeMillis())

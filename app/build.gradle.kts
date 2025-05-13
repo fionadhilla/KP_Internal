@@ -60,4 +60,5 @@ dependencies {
     implementation("org.tensorflow:tensorflow-lite-gpu:2.13.0")
     implementation("com.google.mediapipe:tasks-core:0.10.14")
     implementation("com.google.mediapipe:tasks-vision:0.10.14")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0") // versi terbaru
 }

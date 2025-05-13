@@ -43,7 +43,11 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.Settings ->
+                {
+                    val intent = Intent(this, SettingsActivity::class.java)
+                    startActivity(intent)
                     return@setOnItemSelectedListener true
+                }
             }
             false
         }
